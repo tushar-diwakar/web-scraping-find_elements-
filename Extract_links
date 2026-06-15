@@ -1,0 +1,6 @@
+import requests
+from bs4 import BeautifulSoup
+web = requests.get("https://tutorialsfreak.com/")
+soup = BeautifulSoup(web.content, "html.parser")
+for i in soup.find_all("a"):
+    print(i.get("href"))
