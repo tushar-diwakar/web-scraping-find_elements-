@@ -1,0 +1,34 @@
+import requests
+from bs4 import BeautifulSoup
+
+web = requests.get("https://tutorialsfreak.com/")
+
+
+print(web)
+
+web.content
+
+soup = BeautifulSoup(web.content,"html.parser")
+
+print(soup.prettify())
+
+soup.find_all('p')
+
+tag = soup.html
+type(tag)
+
+tag = soup.p
+tag
+
+
+tag = soup.p.string
+tag
+
+soup.title
+
+soup.name
+
+class_data = soup.find("div",class_ = "content")
+class_data.find_all("p")
+id_data = soup.find("div",id_ = "app_fronted")
+id_data.find_all("p")
