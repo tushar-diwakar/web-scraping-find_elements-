@@ -1,0 +1,14 @@
+import requests
+from bs4 import BeautifulSoup
+
+web = requests.get("https://tutorialsfreak.com/")
+soup = BeautifulSoup(web.content, "html.parser")
+
+img = soup.find_all("img")
+img
+
+for i in img:
+    print(i["src"])
+
+for i in img:
+    print(i.get("alt"))
